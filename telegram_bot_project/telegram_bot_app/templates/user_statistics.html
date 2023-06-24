@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Statistics</title>
+</head>
+<body>
+    <h1>User Statistics</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Telegram ID</th>
+                <th>Total Calls</th>
+                <th>Button Calls</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stat in statistics %}
+            <tr>
+                <td>{{ stat.user.telegram_id }}</td>
+                <td>{{ stat.total_calls }}</td>
+                <td>
+                    <ul>
+                        {% for button_call in stat.button_calls %}
+                        <li>{{ button_call.button.name }}: {{ button_call.count }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
