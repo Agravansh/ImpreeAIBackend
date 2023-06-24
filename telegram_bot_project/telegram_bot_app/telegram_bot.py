@@ -35,7 +35,7 @@ def build_menu(buttons, n_cols):
     return menu
 
 def main():
-    updater = Updater(token=settings.6220865407:AAFJiOTRZAGAnKfZQq6IkdFk32WbjXuTrXI, use_context=True)
+    updater = Updater(token=settings.'TOKEN', use_context=True)
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CallbackQueryHandler(button_callback))
